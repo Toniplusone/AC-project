@@ -4,52 +4,34 @@ public class Project1_toni_dotson
 {  
      public static void main(String[] args)
       {
+         double btu;
   
-         
          double roomLength; //to hold the rooms length
-         
          double roomWidth; //to hold the rooms width
-        
-         int shade; //to hold the rooms shade
-         
-         int capacity; //to hold AC capacity
-         
-                  
-         double extraCooling = btu + .15d;
-         
-         double lessCooling = btu - (btu * .90);
-         
-         String double btu; 
-         
-         
-         
-         
+         int shade = 0; //to hold the rooms shade
          
          //constants to hold menu choice
          final int littleShade = 1;
          final int moderateShade = 2;
          final int abundantShade = 3;
          
-         //idk yet
-          double btu1 = 5500;//sq feet under 250 = BTU/hr with moderate shade
-          double btu2 = 10000;//sq feet >= 250 && <500 = BTU/hr with moderate shade
-          double btu3 = 17500;//sq feet > 500 & sq feet < 1000 = BTU/hr with moderate shade
-          double btu4 = 24000;//sq feet >= 1000 with moderate shade
-          double btu = 0.0;
-         
-         
-         
+         //constants to hold BTU
+          double btu1 = 5500.00;//sq feet under 250 = BTU/hr with moderate shade
+          double btu2 = 10000.00;//sq feet >= 250 && <500 = BTU/hr with moderate shade
+          double btu3 = 17500.00;//sq feet > 500 & sq feet < 1000 = BTU/hr with moderate shade
+          double btu4 = 24000.00;//sq feet >= 1000 with moderate shade
+          
          Scanner keyboard = new Scanner(System.in); //scanner object
          
          
-         System.out.print("Enter the length of your room: ");
+         System.out.print("Please enter the length of the room (in feet): ");
          roomLength = keyboard.nextDouble(); //reads users input
          
-         System.out.print("Enter the width of your room: ");
+         System.out.print("Please enter the width of the room (in feet): ");
          roomWidth = keyboard.nextDouble();
          
          //display menu
-         System.out.println("How much shade does the room get?: ");
+         System.out.println("What is the amount of shade that this room receives?: ");
          
          System.out.println("1. Little Shade");
          
@@ -59,317 +41,156 @@ public class Project1_toni_dotson
          
          
          System.out.print("\nEnter your choice: "); //Have user enter a number from the choices
-         shade = keyboard.nextInt(); //reads users input
+         btu = keyboard.nextDouble(); //reads users input
          
-         //constants to hold the rooms area (roomSize)
+         System.out.println("Air Conditioning Window Unit Cooling Capacity");
+         
+           //constants to hold the rooms area (roomSize)
           double roomSize = roomLength * roomWidth;
           
            //determine capacity of air conditioning unit
-           if(shade == littleShade && roomSize < 250 )
+           if(btu == littleShade && roomSize < 250 )
             {
+                  double finalbtu =  btu1 + .15d;
+                  
+                  System.out.println("Room Area(in square feet): " +
+                                                               roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                                  btu);
+                        System.out.println("BTU's per Hour needed: " + 
+                                                                     finalbtu);
             
-               btu = btu1 + .15d;
             }
-           else(shade == littleShade && (roomSize >= 250 && roomSize < 500)
+           else if(btu == littleShade && roomSize >= 250 && roomSize < 500)
            {
-               btu = btu2 + .15d;
+                  double finalbtu = btu2 + .15d;
+                  System.out.println("Room Area(in square feet): " +
+                                                               roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                                  btu);
+                        System.out.println("BTU's per Hour needed: " + 
+                                                                     finalbtu);
            }
-           else(shade == littleShade &&  roomSize > 500 && roomSize < 1000)
+           else if(btu == littleShade &&  roomSize > 500 && roomSize < 1000)
            {
-               btu = btu3 + .15d;
+               double finalbtu = btu3 + .15d;
+                        System.out.println("Room Area(in square feet): " +
+                                                               roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                                  btu);
+                        System.out.println("BTU's per Hour needed: " + 
+                                                                     finalbtu);
            }
-           else if(shade == littleShade && roomSize >= 1000)
+           else if(btu == littleShade && roomSize >= 1000)
            {
-               btu = btu4 + >15d;
+               double finalbtu = btu4 + .15d;
+                        System.out.println("Room Area: " +
+                                                               roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                                  btu);
+                        System.out.println("BTU's per Hour needed: " + 
+                                                                     finalbtu);
            }
            
            
-           if(shade == abundantShade && roomSize < 250 )
+           if(btu == abundantShade && roomSize < 250 )
             {
             
-               btu = btu1 - (btu1 * .90);
+               double finalbtu = btu1 - (btu1 * .10);
+               System.out.println("Room Area: " + 
+                                                      roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                            btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                   finalbtu);
             }
-           else(shade == abundantShade && (roomSize >= 250 && roomSize < 500)
+           else if(btu == abundantShade && roomSize >= 250 && roomSize < 500)
            {
-               btu = btu2 - (btu2 * .90);
+               double finalbtu = btu2 - (btu2 * .10);
+                        System.out.println("Room Area: " + 
+                                                      roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                            btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                   finalbtu);
+                       
            }
-           else(shade == abundantShadee &&  roomSize > 500 && roomSize < 1000)
+           else if(btu== abundantShade &&  roomSize > 500 && roomSize < 1000)
            {
-               btu = btu3 - (btu3 * .90);
+               double finalbtu = btu3 - (btu3 * .10);
+                        System.out.println("Room Area: " + 
+                                                      roomSize);
+                        System.out.println("Amount of Shade: " + 
+                                                            btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                   finalbtu);
+                        
            }
-           else if(shade == abundantShade && roomSize >= 1000)
+           else if(btu == abundantShade && roomSize >= 1000)
            {
-               btu = btu4 - (btu4 * .90);
+              double finalbtu = btu4 - (btu4 * .10);
+                        System.out.println("Room Area: " + 
+                                                      roomSize);
+                        System.out.println("Amount ofSshade: " + 
+                                                            btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                   finalbtu);
+                        
                           }
            
            
            
-           if(shade == moderateShade && roomSize < 250 )
+           if(btu == moderateShade && roomSize < 250 )
             {
             
-               btu = btu1;
-            }
-           else(shade == moderateShade && (roomSize >= 250 && roomSize < 500)
-           {
-               btu = btu;
-           }
-           else(shade == moderateShade &&  roomSize > 500 && roomSize < 1000)
-           {
-               btu = btu3;
-           }
-           else if(shade == moderateShade && roomSize >= 1000)
-           {
-               btu = btu4;
-           }
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-          if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  
-           
-           
-            if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  
-           
-           
-               
-            
-               
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            if(roomSize < 250 )
-            
-                btu = btu1;
-                
-             if(roomSize >= 250 && roomSize < 500)
-             
-                  btu = btu2;
-              
-             if(roomSize > 500 && roomSize < 1000)
-             
-                  btu = btu3;
-                
-             if(roomSize >= 1000)
-             
-                  btu = btu4;
-                  
-                 
-             
-         System.out.println("Air Conditioning Window Unit Cooling Capacity");
-                        
-         switch (shade)
-                  {
-                        
-                     case moderateShade:
-                        System.out.println("Room size: " +
-                                                       roomSize);
-                        System.out.println("Amount of Shade: " +
-                                                             shade);
-                        System.out.println("BTU's per Hour needed: " +
-                                                                btu);
-                        break;
-                        
-                      case littleShade:
-                        System.out.println("Room size: " +
-                                                               roomSize);
-                        System.out.println("Amount of shade: " + 
-                                                                  shade);
-                        System.out.println("BTU's per Hour needed: " + 
-                                                                     extraCooling);
-                        break;
-                                                             
-                        
-                      case abundantShade:
-                        System.out.println("Room size: " + 
-                                                      roomSize);
-                        System.out.println("Amount of shade: " + 
-                                                            shade);
-                        System.out.println("BTU's per Hour needed: " +
-                                                                   lessCooling);
-                        break;
-                        
-                        
-                        }
-                        
-                        
-                        System.exit(0);
-                   }
-
-               } 
-            
-          
-          
-          
-          
-          
-          
-          
-         
-      
-         
-        
-    switch (shade)
-           
-           
-                  {
-                        
-                     case moderateShade:
-                        System.out.println("Room size: " +
+                  double finalbtu = btu1;
+                        System.out.println("Room Area: " +
                                                        roomSize);
                         System.out.println("Amount of Shade: " +
                                                              btu);
                         System.out.println("BTU's per Hour needed: " +
                                                                 finalbtu);
-                        break;
-                        
-                      case littleShade:
-                        System.out.println("Room size: " +
-                                                               roomSize);
-                        System.out.println("Amount of shade: " + 
-                                                                  btu);
-                        System.out.println("BTU's per Hour needed: " + 
-                                                                     finalbtu);
-                        break;
-                                                             
-                        
-                      case abundantShade:
-                        System.out.println("Room size: " + 
-                                                      roomSize);
-                        System.out.println("Amount of shade: " + 
-                                                            btu);
+               }
+              else if(btu == moderateShade && roomSize >= 250 && roomSize < 500)
+              {
+                  double finalbtu = btu;
+                        System.out.println("Room Area: " +
+                                                       roomSize);
+                        System.out.println("Amount of Shade: " +
+                                                             btu);
                         System.out.println("BTU's per Hour needed: " +
-                                                                   finalbtu);
-                        break;
-                        }
+                                                                finalbtu);
+              }
+              else if(btu == moderateShade &&  roomSize > 500 && roomSize < 1000)
+              {
+                  double finalbtu = btu3;
+                        System.out.println("Room Area: " +
+                                                       roomSize);
+                        System.out.println("Amount of Shade: " +
+                                                             btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                finalbtu);
+              }
+              else if(btu == moderateShade && roomSize >= 1000)
+              {
+                  double finalbtu = btu4;
+                        System.out.println("Room Area: " +
+                                                       roomSize);
+                        System.out.println("Amount of Shade: " +
+                                                             btu);
+                        System.out.println("BTU's per Hour needed: " +
+                                                                finalbtu);
+                  
+                  
+           
+            System.out.println("Air Conditioning Window Unit Cooling Capacity");
+                        
+                                   
+                        
+                    System.exit(0);    
+                        
+       } 
+   }
+           
+           
+}
