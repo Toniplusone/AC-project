@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Project1_toni_dotson
 {  
-   private static int total;
+  
    public static void main(String[] args)
    {
    
@@ -14,9 +14,7 @@ public class Project1_toni_dotson
          int shade; //to hold the rooms shade
          
          int capacity; //to hold AC capacity
-         
-         double btu = total;
-         
+        
          double extraCooling = btu + .15d;
          
          double lessCooling = btu - (btu * .90);
